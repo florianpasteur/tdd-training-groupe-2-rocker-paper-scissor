@@ -3,13 +3,10 @@ public class Game {
         if (player1sign.isBeaten(player2sign)) {
             return GameResult.P2_WINS;
         }
-        if (player1sign == Sign.PAPER && player2sign == Sign.PAPER) {
-            return GameResult.TIE;
+        if (player2sign.isBeaten(player1sign)) {
+            return GameResult.P1_WINS;
         }
-        if (player1sign == Sign.ROCK && player2sign == Sign.ROCK) {
-            return GameResult.TIE;
-        }
-        return GameResult.P1_WINS;
+        return GameResult.TIE;
     }
 
 }
