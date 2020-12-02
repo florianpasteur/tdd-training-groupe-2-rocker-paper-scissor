@@ -1,13 +1,22 @@
 public enum Sign {
-    ROCK, SCISSOR, PAPER;
+    ROCK {
+        @Override
+        boolean isBeaten(Sign otherSign) {
+            return otherSign == PAPER;
+        }
+    }, SCISSOR {
+        @Override
+        boolean isBeaten(Sign otherSign) {
+            return otherSign == ROCK;
+        }
 
-    public boolean beats(Sign player2sign) {
-        if (this == ROCK && player2sign == PAPER)
-            return  true;
-        if (this == SCISSOR && player2sign == ROCK)
-            return  true;
-        if (this == PAPER && player2sign == SCISSOR)
-            return  true;
-        return false;
-    }
+    }, PAPER {
+        @Override
+        boolean isBeaten(Sign otherSign) {
+            return otherSign == SCISSOR;
+        }
+
+    };
+
+    abstract boolean isBeaten(Sign otherSign);
 }
