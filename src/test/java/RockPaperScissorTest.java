@@ -23,4 +23,16 @@ public class RockPaperScissorTest {
         // Then
         assertThat(GameResult.P1_WINS).isEqualTo(gameResult);
     }
+
+    @Test
+    void should_return_P2_wins_when_P1_plays_PAPER_and_P2_plays_SCISSOR() {
+        // Given
+        Game game = new Game();
+
+        // When
+        GameResult gameResult = game.play(Sign.PAPER, Sign.SCISSOR);
+
+        // Then
+        assertThat(GameResult.P2_WINS).isEqualTo(gameResult);
+    }
 }

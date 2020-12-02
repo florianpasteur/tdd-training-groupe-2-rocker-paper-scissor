@@ -1,3 +1,3 @@
 public enum Sign {
-    ROCK, PAPER
+    ROCK, SCISSOR, PAPER
 }

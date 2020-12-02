@@ -1,3 +1,3 @@
 public enum GameResult {
-    P1_WINS
+    P2_WINS, P1_WINS
 }
