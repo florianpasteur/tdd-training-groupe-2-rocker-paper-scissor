@@ -6,6 +6,9 @@ public class Game {
         if (player1sign == Sign.PAPER && player2sign == Sign.PAPER) {
             return GameResult.TIE;
         }
+        if (player1sign == Sign.ROCK && player2sign == Sign.ROCK) {
+            return GameResult.TIE;
+        }
         return GameResult.P1_WINS;
     }
 

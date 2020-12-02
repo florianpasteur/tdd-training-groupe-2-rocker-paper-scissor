@@ -71,4 +71,16 @@ public class RockPaperScissorTest {
         // Then
         assertThat(GameResult.P2_WINS).isEqualTo(gameResult);
     }
+
+    @Test
+    void should_return_TIE_when_P1_plays_ROCK_and_P2_plays_ROCK() {
+        // Given
+        Game game = new Game();
+
+        // When
+        GameResult gameResult = game.play(Sign.ROCK, Sign.ROCK);
+
+        // Then
+        assertThat(GameResult.TIE).isEqualTo(gameResult);
+    }
 }
